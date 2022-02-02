@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react'
 
-const RoastContext = createContext({}, () => {})
+const RoastContext = createContext(null)
 
 export const RoastProvider = ({ children }) => {
   const [roastData, setRoastData] = useState({})

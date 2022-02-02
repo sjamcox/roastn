@@ -6,7 +6,7 @@ const RoastSchema = new mongoose.Schema(
     roaster: String,
     beanOrigin: String,
     beanWeight: String,
-    ambientTemp: String,
+    roomTemperature: String,
     startTime: String,
     firstCrack: String,
     secondCrack: String,

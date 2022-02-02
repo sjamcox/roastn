@@ -20,7 +20,7 @@ const NotesContainer = styled.div`
 
 const Notes = () => {
   const { push } = useRouter()
-  const { roastData } = useContext(RoastContext)
+  const { roastData, clearRoastData } = useContext(RoastContext)
   const [notes, setNotes] = useState('')
   const { mutate } = useCreateRoast()
 
@@ -28,6 +28,7 @@ const Notes = () => {
     const payload = skip ? roastData : { ...roastData, notes }
     mutate(payload, {
       onSuccess: () => {
+        clearRoastData()
         push('/')
       },
     })

@@ -3,6 +3,7 @@ import dbConnect from '../../../lib/dbConnect'
 import Roast from '../../../models/Roast'
 
 export default async function handler(req, res) {
+  console.log('hitting API')
   const { body, method } = req
   const { id } = req.query
 
@@ -21,6 +22,7 @@ export default async function handler(req, res) {
       }
       res.status(200).json(roast)
     } catch (error) {
+      console.log(error)
       res.status(400).json({ success: false })
     }
   }

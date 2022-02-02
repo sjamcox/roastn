@@ -32,7 +32,7 @@ const RoastTimerContainer = styled.main`
 
 const Timer = () => {
   const { push } = useRouter()
-  const { updateRoastData } = useContext(RoastContext)
+  const { updateRoastData, clearRoastData } = useContext(RoastContext)
   const [progress, setProgress] = useState({
     startTime: Date.now(),
     firstCrack: null,
@@ -41,13 +41,19 @@ const Timer = () => {
   const [isRunning, setIsRunning] = useState(true)
   const [timeElapsed, setTimeElapsed] = useState(0)
 
-  const stop = () => {
+  const handleEnd = () => {
     setIsRunning(false)
     updateRoastData({
       ...progress,
-      timeElapsed: formatTime(timeElapsed),
+      totalTime: formatTime(timeElapsed),
     })
     push('/roast/notes')
+  }
+
+  const handleCancel = () => {
+    setIsRunning(false)
+    clearRoastData()
+    push('/')
   }
 
   const formatTime = (mil) => {
@@ -102,9 +108,9 @@ const Timer = () => {
         </>
       )}
       <div>
-        <Button onClick={() => stop()}>End and Save</Button>
-        <Button secondary onClick={() => {}}>
-          Abort
+        <Button onClick={handleEnd}>End and Save</Button>
+        <Button secondary onClick={handleCancel}>
+          Cancel Roast
         </Button>
       </div>
     </RoastTimerContainer>

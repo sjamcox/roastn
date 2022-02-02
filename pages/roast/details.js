@@ -73,7 +73,7 @@ const Details = () => {
           name="roomTemperature"
           onChange={handleChange}
           type="text"
-          value={data.ambientTemp}
+          value={data.roomTemperature}
         />
       </div>
       <Button onClick={handleNext}>Start Roast</Button>

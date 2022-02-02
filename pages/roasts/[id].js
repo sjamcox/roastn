@@ -33,10 +33,10 @@ const RoastDetails = () => {
           </div>
           <p>Roaster: {roast.roaster}</p>
           <p>Weight: {roast.beanWeight}</p>
-          <p>Ambient Temp: {roast.ambientTemp}</p>
+          <p>Room Temperature: {roast.roomTemperature}</p>
           <p>First Crack: {roast.firstCrack}</p>
           <p>Second Crack: {roast.secondCrack}</p>
-          <p>Total Time: {roast.timeElapsed}</p>
+          <p>Total Time: {roast.totalTime}</p>
           <p>Roasting Notes: {roast.notes}</p>
         </>
       )}
