@@ -35,13 +35,12 @@ const LoggedIn = ({ session }) => {
   return (
     <Container>
       <h2>Turn up the heat</h2>
-      <Link href="/start">
+      <Link href="/roast/details">
         <Button>New Roast</Button>
       </Link>
       <Link href="/roasts">
         <Button secondary>Roast History</Button>
       </Link>
-      <Button onClick={handleSubmit}>Post Request</Button>
     </Container>
   )
 }
