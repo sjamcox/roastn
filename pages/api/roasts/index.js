@@ -25,10 +25,8 @@ export default async function handler(req, res) {
   }
 
   if (method === 'POST') {
-    if (session.user.email !== body.email) {
-      res.status(400).json({ success: false })
-    }
     try {
+      body.email = session.user.email
       const roast = await Roast.create(body)
       res.status(200).json(roast)
     } catch (error) {
