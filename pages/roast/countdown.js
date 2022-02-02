@@ -1,5 +1,6 @@
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import styled from 'styled-components'
-import { Redirect } from 'react-router-dom'
 
 const CountdownContainer = styled.div`
   align-items: center;
@@ -20,23 +21,25 @@ const CountdownContainer = styled.div`
 `
 
 const Countdown = () => {
-  let [number, setNumber] = useState(3)
+  const { push } = useRouter()
+  const [number, setNumber] = useState(3)
 
   useEffect(() => {
     const decrement = setTimeout(() => {
-      if (number > 0) {
+      if (number - 1 > 0) {
         setNumber(number - 1)
+      } else {
+        push('/roast/timer')
       }
-    }, 1300)
+    }, 1000)
 
     return () => clearTimeout(decrement)
-  }, [number])
+  }, [number, push])
 
   return (
     <CountdownContainer>
       <h2>Get ready</h2>
       <p>{number}</p>
-      {number === 0 && <Redirect to="/roast" />}
     </CountdownContainer>
   )
 }
