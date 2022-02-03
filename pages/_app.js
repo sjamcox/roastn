@@ -9,8 +9,9 @@ import { RoastProvider } from 'contexts/roast.js'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 
+const queryClient = new QueryClient()
+
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
-  const queryClient = new QueryClient()
   return (
     <>
       <GlobalStyles />
