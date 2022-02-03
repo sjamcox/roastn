@@ -1,6 +1,6 @@
 import { useSession } from 'next-auth/react'
 import styled from 'styled-components'
-import Button from '../components/Button'
+import Button from 'components/Button'
 import Link from 'next/link'
 import axios from 'axios'
 import { useQuery, useMutation } from 'react-query'

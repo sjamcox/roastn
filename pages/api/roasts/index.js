@@ -1,6 +1,6 @@
 import { getSession } from 'next-auth/react'
-import dbConnect from '../../../lib/dbConnect'
-import Roast from '../../../models/Roast'
+import dbConnect from 'lib/dbConnect'
+import Roast from 'models/Roast'
 
 export default async function handler(req, res) {
   const { body, method } = req

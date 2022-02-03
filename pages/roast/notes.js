@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react'
 import styled from 'styled-components'
-import Button from '../../components/Button'
-import useCreateRoast from '../../hooks/useCreateRoast'
-import RoastContext from '../../contexts/roast'
+import Button from 'components/Button'
+import useCreateRoast from 'hooks/useCreateRoast'
+import RoastContext from 'contexts/roast'
 import { useRouter } from 'next/router'
 
 const NotesContainer = styled.div`

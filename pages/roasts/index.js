@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import RoastSnippet from '../../components/RoastSnippet'
-import useRoasts from '../../hooks/useRoasts'
+import RoastSnippet from 'components/RoastSnippet'
+import useRoasts from 'hooks/useRoasts'
 
 const RoastHistoryContainer = styled.div`
   align-items: flex-start;

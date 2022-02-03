@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router'
 import { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
-import Button from '../../components/Button'
-import RoastContext from '../../contexts/roast'
+import Button from 'components/Button'
+import RoastContext from 'contexts/roast'
 
 const RoastTimerContainer = styled.main`
   align-items: center;

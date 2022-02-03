@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
-import useRoast from '../../hooks/useRoast'
+import useRoast from 'hooks/useRoast'
 
 const RoastDetailsContainer = styled.div`
   width: 100%;

@@ -1,11 +1,11 @@
-import '../styles/globals.js'
-import { SessionProvider } from 'next-auth/react'
-import Auth from '../components/Auth'
-import { GlobalStyles } from '../styles/globals.js'
+import 'styles/globals.js'
+import { GlobalStyles } from 'styles/globals.js'
 import { ThemeProvider } from 'styled-components'
-import { theme } from '../styles/theme.js'
-import Layout from '../components/Layout.js'
-import { RoastProvider } from '../contexts/roast.js'
+import { theme } from 'styles/theme.js'
+import { SessionProvider } from 'next-auth/react'
+import Auth from 'components/Auth'
+import Layout from 'components/Layout.js'
+import { RoastProvider } from 'contexts/roast.js'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 
@@ -15,9 +15,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
     <>
       <GlobalStyles />
       <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools initialIsOpen={false} />
         <ThemeProvider theme={theme}>
           <SessionProvider session={session}>
-            <ReactQueryDevtools initialIsOpen={false} />
             <Layout>
               <RoastProvider>
                 {Component.auth ? (
